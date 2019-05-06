@@ -1,20 +1,22 @@
 package com.chungfung.property;
 
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
  * @Description
  * @Author 丰涌
- * @Date 2019/5/6 14:57
+ * @Date 2019/5/6 15:29
  * @Version 1.0
  */
 @Component
-public class MyProperties {
+@Data
+public class PlaceholderProperty {
 
-    @Value("com.test.name")
+    @Value("${app.name}")
     private String name;
 
-    @Value("com.test.password")
-    private String password;
+    @Value("${app.description}")
+    private String description;
 }
