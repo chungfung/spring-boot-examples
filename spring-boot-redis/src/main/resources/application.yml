@@ -1,0 +1,15 @@
+#哨兵模式根据名称自动选择master
+spring:
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: 192.168.184.129:26379
+    port: 6379
+    timeout: 0
+    pool:
+      max-active: 500
+      min-idle: 5
+      max-wait: 300
+      max-idle: 50
+    database: 0
+    password: 123456
