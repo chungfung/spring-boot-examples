@@ -1,5 +1,6 @@
 package com.chungfung.controller;
 
+import com.chungfung.annotation.UserAccess;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,6 +17,7 @@ public class AopController {
 
     @RequestMapping("test")
     @ResponseBody
+    @UserAccess(desc = "自定义注解")
     public String test(){
         return "SUCCESS";
     }
