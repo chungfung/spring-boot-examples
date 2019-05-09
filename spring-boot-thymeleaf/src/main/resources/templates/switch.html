@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Example switch </title>
+</head>
+<body>
+<div >
+    <div th:switch="${sex}">
+        <span th:case="'man'">纯爷们</span>
+        <span th:case="'woman'">小姐姐</span>
+        <span th:case="*">玻璃</span>
+    </div>
+</div>
+</body>
+</html>

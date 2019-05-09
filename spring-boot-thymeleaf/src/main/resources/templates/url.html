@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Example If/Unless </title>
+</head>
+<body>
+<div >
+    <h1>URL</h1>
+        <a th:href="@{http://www.baidu.com(type1=${type},type2=${type})}">百度一下</a>
+        <a th:href="@{http://www.ityouknow.com/{type}(type=${type})}">链接1</a><br/>
+        <a th:href="@{http://www.ityouknow.com/{pageId}/can-use-springcloud.html(pageId=${pageId})}">view</a><br/>
+    <div th:style="'background:url(' + @{${img}} + ');'">
+        <br/><br/><br/>
+    </div>
+</div>
+</body>
+</html>

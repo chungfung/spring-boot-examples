@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Example If/Unless </title>
+</head>
+<body>
+<div >
+    <h1>If/Unless</h1>
+    <span th:if="${flag eq 'yes'}" >flag is YES!</span></br>
+    <p th:if="${number == 2}">number is two!</p></br>
+    <div th:if="${label eq false}">label is false!</div></br>
+    <span th:unless="${label eq false}">label is true!</span></br>
+</div>
+</body>
+</html>
