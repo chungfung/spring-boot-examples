@@ -18,5 +18,6 @@
 		<module>spring-boot-task</module>
 		<module>spring-boot-redis</module>
 		<module>spring-boot-thymeleaf</module>
+		<module>spring-boot-mail</module>
 	</modules>
 </project>
