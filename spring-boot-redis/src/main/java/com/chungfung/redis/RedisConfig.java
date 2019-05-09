@@ -21,9 +21,8 @@ import java.util.Set;
  * @Date 2019/5/8 16:34
  * @Version 1.0
  */
-
-@Configuration
 @Slf4j
+@Configuration
 public class RedisConfig {
 
     @Value("${spring.redis.timeout}")

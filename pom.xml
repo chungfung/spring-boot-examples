@@ -8,5 +8,15 @@
 	<artifactId>spring-boot-examples</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-
+	<modules>
+		<module>spring-boot-hello</module>
+		<module>spring-boot-property</module>
+		<module>spring-boot-mybatis</module>
+		<module>spring-boot-aop</module>
+		<module>spring-boot-exception</module>
+		<module>spring-boot-interceptor</module>
+		<module>spring-boot-task</module>
+		<module>spring-boot-redis</module>
+		<module>spring-boot-thymeleaf</module>
+	</modules>
 </project>
