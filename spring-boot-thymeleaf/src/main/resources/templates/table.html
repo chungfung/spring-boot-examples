@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Example If/Unless </title>
+</head>
+<body>
+<div >
+    <h1>for 循环</h1>
+    <table border="1px">
+        <thead>
+            <td>编号</td>
+            <td>名称</td>
+            <td>父编号</td>
+        </thead>
+        <th:block th:each="item: ${list}" th:if="${item.pid == '0'}">
+            <tr>
+                <td th:text="${item.id}"></td>
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.pid}"></td>
+            </tr>
+            <th:block th:each="item2: ${list}" th:if="${item2.pid eq item.id}">
+                <tr>
+                    <td th:text="${item2.id}"></td>
+                    <td th:text="${item2.name}"></td>
+                    <td th:text="${item2.pid}"></td>
+                </tr>
+                <th:block th:each="item3: ${list}" th:if="${item3.pid eq item2.id}">
+                    <tr>
+                        <td th:text="${item3.id}"></td>
+                        <td th:text="${item3.name}"></td>
+                        <td th:text="${item3.pid}"></td>
+                    </tr>
+                </th:block>
+            </th:block>
+        </th:block>
+
+    </table>
+</div>
+</body>
+</html>
