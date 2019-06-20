@@ -34,7 +34,6 @@ public class SwaggerConfiguration {
                 .title("多数据源 SSM 测试服务")
                 .description("多数据源 SSM 测试文档")
                 .termsOfServiceUrl("http://www.seawaterbt.com")
-                //.contact(new Contact("海水不甜","http://www.seawaterbt.com","809318068@qq.com"))
                 .version("1.0")
                 .build();
     }
