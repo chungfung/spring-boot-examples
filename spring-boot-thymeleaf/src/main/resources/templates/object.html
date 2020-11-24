@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Example String </title>
+</head>
+<body>
+    <div >
+        <h1>对象测试</h1>
+        <div>
+            <span th:text="|姓名：${user.name}|"></span><br/>
+            <span th:text="|年龄：${user.age}|"></span><br/>
+            <span th:text="|是否通过：${user.pass eq true ? 'YES':'NO'}|"></span><br/>
+        </div>
+        <p/>
+        <div th:object="${user}">
+            <span th:text="|姓名：*{name}|"></span><br/>
+            <span th:text="|年龄：*{age}|"></span><br/>
+            <span th:text="|是否通过：*{pass eq true ? 'YES':'NO'}|"></span><br/>
+        </div>
+    </div>
+    <div>
+        <span th:text="${#request.getAttribute('user')}"></span>
+    </div>
+</body>
+</html>

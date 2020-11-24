@@ -35,4 +35,10 @@ public class NameController {
         IPage<NameVO> p = nameService.page(page);
         return p;
     }
+
+    @RequestMapping("/getName2")
+    @ResponseBody
+    public NameVO getName2() {
+        return new NameVO().selectOne(null);
+    }
 }

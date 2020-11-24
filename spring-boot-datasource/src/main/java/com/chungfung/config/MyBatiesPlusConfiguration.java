@@ -71,7 +71,8 @@ public class MyBatiesPlusConfiguration {
      */
     @Bean
     @Primary
-    public DataSource multipleDataSource(@Qualifier("db1") DataSource db1, @Qualifier("db2") DataSource db2) {
+    public DataSource multipleDataSource(@Qualifier("db1") DataSource db1,
+                                         @Qualifier("db2") DataSource db2) {
         MultipleDataSource multipleDataSource = new MultipleDataSource();
         Map< Object, Object > targetDataSources = new HashMap<>();
         targetDataSources.put(DataSourceEnum.DB1.getValue(), db1);

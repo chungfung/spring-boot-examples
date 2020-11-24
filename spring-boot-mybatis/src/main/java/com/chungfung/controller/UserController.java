@@ -1,14 +1,17 @@
 package com.chungfung.controller;
 
-import com.chungfung.model.NameVO;
+import com.chungfung.model.UserEnum;
+import com.chungfung.model.UserVO;
 import com.chungfung.page.PageBean;
 import com.chungfung.page.PageParam;
-import com.chungfung.service.NameService;
+import com.chungfung.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * @Description
@@ -18,21 +21,21 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("name")
-public class NameController {
+public class UserController {
 
     @Autowired
-    private NameService nameService;
+    private UserService userService;
 
     @RequestMapping("/getName")
     @ResponseBody
-    public NameVO getName(@RequestParam("id") Long id) {
-        return nameService.getNameById(id);
+    public List<UserVO> getName() {
+        return userService.getNameUserEnum(UserEnum.Man);
     }
 
     @RequestMapping("/getNameList")
     @ResponseBody
-    public PageBean<NameVO> getNameList(PageParam pageParam) {
-        PageBean<NameVO> pageBean = nameService.queryNameList(pageParam);
+    public PageBean<UserVO> getNameList(PageParam pageParam) {
+        PageBean<UserVO> pageBean = userService.queryNameList(pageParam);
         return pageBean;
     }
 }

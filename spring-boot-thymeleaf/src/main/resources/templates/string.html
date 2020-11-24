@@ -7,10 +7,15 @@
 <body>
     <div >
         <h1>text</h1>
-        <p th:text="${userName}">neo</p>
-        <span th:text="'Welcome to our application, ' + ${userName} + '!'"></span>
+        <p th:text="${userName}">test</p>
+        <p>[[${userName}]]</p>
+        <span th:text="'Welc24ome to our application, ' + ${userName} + '!'"></span>
         <br/>
-        <span th:text="|Welcome to our application, ${userName}!|"></span>
+        <span th:text="|Welcome to our application, ${userName}|"></span>
     </div>
 </body>
+<script th:inline="javascript">
+    var userName = [[${userName}]];
+    var ctxPath = [[${#request.getContextPath()}]];
+</script>
 </html>

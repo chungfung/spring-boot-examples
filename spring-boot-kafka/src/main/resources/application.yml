@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: springboot-kafka-user
+#============== kafka ===================
+# 指定kafka 代理地址，可以多个
+  kafka:
+    bootstrap-servers: kafka01:9092,kafka02:9092,kafka03:9092
+#=============== provider  =======================
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: all
+      properties:
+        linger.ms: 60
+#=============== consumer  =======================
+    consumer:
+      group-id: user-group-1
+      auto-commit-interval: 300000
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer

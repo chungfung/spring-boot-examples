@@ -23,11 +23,23 @@ public class FileUploadController {
 
 	@RequestMapping("/fileUploadController")
 	@ResponseBody
-	public Map<String, Object> fileUpload(MultipartFile filename)throws Exception{
-		System.out.println(filename.getOriginalFilename());
-		filename.transferTo(new File("e:/"+filename.getOriginalFilename()));
+	public Map<String, Object> fileUpload(MultipartFile fileName)throws Exception{
+		System.out.println("aaaaa");
+		System.out.println(fileName.getOriginalFilename());
+		fileName.transferTo(new File("e:/"+fileName.getOriginalFilename()));
 		Map<String, Object> map = new HashMap<>();
 		map.put("msg", "ok");
+
+		String str = streamToString(fileName.getBytes());
+		System.out.println(str);
+
+		String str1 = streamToString(fileName.getBytes());
+		System.out.println(str1);
 		return map;
+	}
+
+	public static String streamToString(byte[] bytes){
+		String out = new String(bytes);
+		return out;
 	}
 }

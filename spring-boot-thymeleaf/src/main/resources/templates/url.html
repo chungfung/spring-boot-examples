@@ -10,8 +10,7 @@
         <a th:href="@{http://www.baidu.com(type1=${type},type2=${type})}">百度一下</a>
         <a th:href="@{http://www.ityouknow.com/{type}(type=${type})}">链接1</a><br/>
         <a th:href="@{http://www.ityouknow.com/{pageId}/can-use-springcloud.html(pageId=${pageId})}">view</a><br/>
-    <div th:style="'background:url(' + @{${img}} + ');'">
-        <br/><br/><br/>
+        <div th:style="'background:url(' + @{${img}} + ');'"><br/>
     </div>
 </div>
 </body>

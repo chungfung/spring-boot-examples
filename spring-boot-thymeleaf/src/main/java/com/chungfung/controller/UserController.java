@@ -1,6 +1,7 @@
 package com.chungfung.controller;
 
 import com.chungfung.model.Tree;
+import com.chungfung.model.User;
 import com.chungfung.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,7 +9,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description
@@ -28,6 +31,16 @@ public class UserController {
         return "string";
     }
 
+    @RequestMapping("/object")
+    public String object(ModelMap map) {
+        User user = new User();
+        user.setName("fengyong");
+        user.setAge(30);
+        user.setPass("aaaaaaaaaaaaaaaa");
+        map.put("user",user);
+        return "object";
+    }
+
     @RequestMapping("/if")
     public String ifunless(ModelMap map) {
         map.addAttribute("flag", "yes");
@@ -40,6 +53,19 @@ public class UserController {
     public String list(ModelMap map) {
         map.addAttribute("users", userService.getUserList());
         return "list";
+    }
+
+    @RequestMapping("/map")
+    public String map(ModelMap modelMap) {
+        User user1=new User("法拉利",12,"123456");
+        User user2=new User("兰博基尼",6,"123563");
+        User user3=new User("迈凯伦",66,"666666");
+        Map<String,User> map = new HashMap<>();
+        map.put("user1",user1);
+        map.put("user2",user2);
+        map.put("user3",user3);
+        modelMap.addAttribute("users",map);
+        return "map";
     }
 
     @RequestMapping("/url")
