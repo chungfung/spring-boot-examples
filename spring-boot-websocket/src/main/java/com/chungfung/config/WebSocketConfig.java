@@ -38,5 +38,4 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
         // 配置客户端发送请求消息的一个或多个前缀，该前缀会筛选消息目标转发到 Controller 类中注解对应的方法里
 //        registry.setApplicationDestinationPrefixes("/app");
     }
-
 }

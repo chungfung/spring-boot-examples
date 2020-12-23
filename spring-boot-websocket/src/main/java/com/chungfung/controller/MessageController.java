@@ -32,7 +32,7 @@ public class MessageController {
         simpMessageSendingOperations.convertAndSend(messageBody.getDestination(), messageBody);
     }
 
-    @Scheduled(fixedRate = 100L)
+    @Scheduled(fixedRate = 5000L)
     public void sendMessage(){
         MessageBody messageBody = new MessageBody();
         int i = new Random().nextInt(3);
