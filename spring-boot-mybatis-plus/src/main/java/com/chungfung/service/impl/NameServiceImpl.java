@@ -1,10 +1,13 @@
 package com.chungfung.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.chungfung.mapper.NameMapper;
 import com.chungfung.model.NameVO;
 import com.chungfung.service.NameService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Description
@@ -15,4 +18,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class NameServiceImpl extends ServiceImpl<NameMapper, NameVO> implements NameService{
 
+    @Override
+    public List<NameVO> getAllExt() {
+        QueryWrapper<NameVO> queryWrapper = new QueryWrapper<>(new NameVO());
+        queryWrapper.eq("name","李四");
+        queryWrapper.eq("age",12);
+        System.out.println("custSQL:" + queryWrapper.getCustomSqlSegment().toString());
+        return this.baseMapper.getAllExt(queryWrapper);
+    }
 }

@@ -22,27 +22,30 @@ public class CustomConsumer {
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
+        props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG,10);
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,"earliest");
 
-        props.put(ConsumerConfig.GROUP_ID_CONFIG, "user-log-group");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "user-log-group-1");
 
         //1.创建1个消费者
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 
         consumer.subscribe(Arrays.asList("first"));
 
-        //2.调用poll
-        while(true){
-            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(10L));
-            for (ConsumerRecord<String, String> record : records) {
-                System.out.println("消费：topic = " + record.topic() + " offset = " + record.offset() + " value = " + record.value());
-            }
-            consumer.commitAsync();
-            try {
-                Thread.sleep(10000L);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+//        //2.调用poll
+//        while(true){
+//            ConsumerRecords<String, String> records = consumer.poll(Duration.ofSeconds(1));
+//            for (ConsumerRecord<String, String> record : records) {
+//                System.out.println("消费：topic = " + record.topic() + " offset = " + record.offset() + " value = " + record.value());
+//                consumer.commitAsync();
+//            }
+//            try {
+//                System.out.println("开始睡眠10s");
+//                Thread.sleep(1000L*10);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
 
         // consumer.close();
     }

@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * @Description
  * @Author chungfung
@@ -27,6 +29,12 @@ public class NameController {
     @ResponseBody
     public NameVO getName(@RequestParam("id") Long id) {
         return nameService.getById(id);
+    }
+
+    @RequestMapping("/getAll")
+    @ResponseBody
+    public List<NameVO> getAll() {
+        return nameService.getAllExt();
     }
 
     @RequestMapping("/getNameList")

@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.chungfung.model.NameVO;
 
+import java.util.List;
+
 /**
  * @Description
  * @Author chungfung
@@ -12,4 +14,5 @@ import com.chungfung.model.NameVO;
  */
 public interface NameService extends IService<NameVO> {
 
+    List<NameVO> getAllExt();
 }

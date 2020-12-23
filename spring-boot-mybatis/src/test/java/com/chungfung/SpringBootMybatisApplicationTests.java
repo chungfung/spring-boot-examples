@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -20,7 +21,7 @@ public class SpringBootMybatisApplicationTests {
 
 	@Test
 	public void userTest() {
-		List<UserVO> list = userService.getNameUserEnum(null);
+		List<UserVO> list = userService.getNameUserEnum(UserEnum.Man,new HashMap<>());
 		list.stream().forEach(System.out::println);
 	}
 

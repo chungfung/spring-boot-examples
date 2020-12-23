@@ -22,8 +22,8 @@ public class MessageConsumer1Test {
     @Autowired
     private MessageConsumer1 messageConsumer1;
 
-    @Autowired
-    private MessageConsumer2 messageConsumer2;
+//    @Autowired
+//    private MessageConsumer2 messageConsumer2;
 
     @Test
     public void consumTest(){

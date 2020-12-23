@@ -23,6 +23,6 @@ public class MessageProducerTest {
 
     @Test
     public void test(){
-        messageProducer.prod("first","测试测试！",0,10);
+        messageProducer.prod("first","new data for test",0,10);
     }
 }

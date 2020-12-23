@@ -23,11 +23,15 @@
 		<module>spring-boot-web</module>
 		<module>spring-boot-datasource</module>
         <module>spring-boot-kafka</module>
+        <module>spring-boot-kafka-streams</module>
+        <module>spring-boot-stream</module>
+        <module>spring-boot-websocket</module>
     </modules>
 
 	<properties>
-		<!-- spring boot版本，Feb, 2020 发布 -->
-		<spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+		<!-- spring boot版本，Feb, 2020 发布 2.2.5 -->
+		<spring-boot.version>2.0.2.RELEASE</spring-boot.version>
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
 	</properties>
 
 	<dependencyManagement>
@@ -37,6 +41,15 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>${spring-boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- SpringCloud的依赖配置 -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

@@ -14,6 +14,11 @@
         <if test="userEnum != null">
           and sex = #{userEnum.code,jdbcType=DECIMAL}
         </if>
+        <if test="extParam != null">
+            <if test="extParam.id != null">
+                and id = #{extParam.id,jdbcType=VARCHAR}
+            </if>
+        </if>
       </where>
   </select>
 

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: springboot-kafka-user1
+#============== kafka ===================
+# 指定kafka 代理地址，可以多个
+  kafka:
+    bootstrap-servers: kafka01:9092,kafka02:9092,kafka03:9092
+    streams:
+      application-id: test_stream
+      state-dir: D://kakfastate
+      replication-factor: 3
+
+

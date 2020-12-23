@@ -1,5 +1,6 @@
 package com.chungfung.service.impl;
 
+import com.chungfung.annotation.UserAccess;
 import com.chungfung.mapper.UserMapper;
 import com.chungfung.model.UserEnum;
 import com.chungfung.model.UserVO;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description
@@ -24,8 +26,10 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public List<UserVO> getNameUserEnum(UserEnum userEnum) {
-        return userMapper.selectByCondition(userEnum);
+    @UserAccess
+    public List<UserVO> getNameUserEnum(UserEnum userEnum,
+                                        Map<String,Object> param) {
+        return userMapper.selectByCondition(userEnum,param);
     }
 
     @Override

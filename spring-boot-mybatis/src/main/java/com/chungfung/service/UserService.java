@@ -6,6 +6,7 @@ import com.chungfung.page.PageBean;
 import com.chungfung.page.PageParam;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Description
@@ -15,7 +16,8 @@ import java.util.List;
  */
 public interface UserService {
 
-    List<UserVO> getNameUserEnum(UserEnum userEnum);
+    List<UserVO> getNameUserEnum(UserEnum userEnum,
+                                 Map<String,Object> param);
 
     PageBean<UserVO> queryNameList(PageParam pageParam);
 }

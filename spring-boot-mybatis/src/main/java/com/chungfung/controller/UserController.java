@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -29,7 +30,7 @@ public class UserController {
     @RequestMapping("/getName")
     @ResponseBody
     public List<UserVO> getName() {
-        return userService.getNameUserEnum(UserEnum.Man);
+        return userService.getNameUserEnum(UserEnum.Man,new HashMap<>());
     }
 
     @RequestMapping("/getNameList")

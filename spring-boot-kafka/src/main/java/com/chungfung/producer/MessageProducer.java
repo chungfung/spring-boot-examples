@@ -19,7 +19,7 @@ public class MessageProducer {
 
     public void prod(String topic, String data, int start, int size){
         for (int i = start; i < start + size; i++) {
-            kafkaTemplate.send(topic, data+i).addCallback(success->{
+            kafkaTemplate.send(topic, String.valueOf(i), data).addCallback(success->{
                 System.out.println("发送成功：" + success);
             },fail->{
                 System.out.println("发送失败:" + fail);

@@ -16,7 +16,7 @@ import java.util.Optional;
 @Component
 public class MessageConsumer1 {
 
-    @KafkaListener(topics = {"first"},groupId = "user-group-3")
+    //@KafkaListener(topics = {"first"},groupId = "user-group-1")
     public void consumer(ConsumerRecord consumerRecord){
         Optional<Object> kafkaMassage = Optional.ofNullable(consumerRecord.value());
         if(kafkaMassage.isPresent()){
